@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade -y
-apt-get install -y python3 python3-pip
+apt-get install -y python3 python3-pip python3-venv
 touch /etc/pip.conf
 
 cat <<EOF > /etc/pip.conf
