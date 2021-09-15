@@ -1,0 +1,13 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/bionic64"
+    config.vm.provision :shell, path: "bootstrap.sh"
+    config.vm.hostname = "py"
+    config.vm.define "py"
+    config.vm.box_download_insecure = true
+    config.vm.synced_folder "/Users/user1/Desktop/Vagrant/py/output", "/opt/vagrant/"
+    config.vm.provider :virtualbox do |vb|
+        vb.name = "py"
+        vb.memory = "6048"
+        vb.cpus = "4"
+    end
+  end
