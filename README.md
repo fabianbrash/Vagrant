@@ -24,6 +24,8 @@ vagrant box list   ###list our box(es)
 
 vagrant box add hashicorp/bionic64
 
+vagrant box update --box ubuntu/bionic64 ## Note this will keep the old and the new
+
 vagrant destroy  ##destroy our box(es)
 
 vagrant box remove hashicorp/bionic64
