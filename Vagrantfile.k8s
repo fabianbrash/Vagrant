@@ -1,0 +1,49 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://vagrantcloud.com/search.
+  #config.vm.box = "generic/debian10"
+
+
+## Control plane node(s)
+
+(1..1).each do |i|
+  config.vm.define "master-#{i}" do |master|
+    master.vm.box = "generic/debian10"
+    master.vm.hostname = "master-#{i}"
+    master.vm.provision "shell", path: "bootstrap.sh"
+    master.vm.define "master-#{i}"
+    master.vm.provider :virtualbox do |vb_master|
+      vb_master.name = "master-#{i}"
+      vb_master.memory = 4096
+      vb_master.cpus = 4
+    end
+  end
+end
+
+## Worker nodes
+
+(1..3).each do |i|
+  config.vm.define "node-#{i}" do |node|
+    node.vm.box = "generic/debian10"
+    node.vm.hostname = "node-#{i}"
+    node.vm.provision "shell", path: "bootstrap.sh"
+    node.vm.define "node-#{i}"
+    node.vm.provider :virtualbox do |vb|
+      vb.name = "node-#{i}"
+      vb.memory = 2048
+      vb.cpus = 2
+    end
+  end
+ end
+end
