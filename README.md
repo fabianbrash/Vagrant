@@ -32,6 +32,8 @@ vagrant box remove hashicorp/bionic64
 
 vagrant ssh  ##ssh into our vagrant machine
 
+vagrant ssh node-1
+
 vagrant rdp  ##duh
 
 ````
