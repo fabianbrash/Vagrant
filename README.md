@@ -22,6 +22,8 @@ vagrant --list-commands
 
 vagrant box list   ###list our box(es)
 
+vagrant box add hashicorp/bionic64
+
 vagrant destroy  ##destroy our box(es)
 
 vagrant ssh  ##ssh into our vagrant machine
