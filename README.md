@@ -26,6 +26,8 @@ vagrant box add hashicorp/bionic64
 
 vagrant destroy  ##destroy our box(es)
 
+vagrant box remove hashicorp/bionic64
+
 vagrant ssh  ##ssh into our vagrant machine
 
 vagrant rdp  ##duh
