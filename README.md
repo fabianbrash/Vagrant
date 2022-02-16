@@ -8,6 +8,7 @@
 
 ````
 mkdir vagrantmachines
+
 mkdir -p vagrantmachines/ubuntu_xenial
 
 vagrant init ubuntu/xenial64
@@ -27,6 +28,8 @@ vagrant box add hashicorp/bionic64
 vagrant box update --box ubuntu/bionic64 ## Note this will keep the old and the new
 
 vagrant destroy  ##destroy our box(es)
+
+vagrant destroy -f
 
 vagrant box remove hashicorp/bionic64
 
