@@ -13,6 +13,8 @@ mkdir -p vagrantmachines/ubuntu_xenial
 
 vagrant init ubuntu/xenial64
 
+vagrant init  #no image specified
+
 vagrant up
 
 vagrant status  ##get the status of vagrant
