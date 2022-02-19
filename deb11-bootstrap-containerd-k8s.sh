@@ -33,3 +33,7 @@ swapoff -a
 # Add k8s repos
 curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
+
+#echo '192.168.56.31  node-1' | tee -a /etc/hosts
+#echo '192.168.56.32  node-2' | tee -a /etc/hosts
+#echo '192.168.56.21  master-1' | tee -a /etc/hosts
