@@ -29,3 +29,7 @@ containerd config default | tee /etc/containerd/config.toml
 systemctl restart containerd
 
 swapoff -a
+
+# Add k8s repos
+curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
