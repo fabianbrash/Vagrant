@@ -3,6 +3,8 @@
 apt-get update
 apt-get upgrade -y
 
+apt-get install -y apt-transport-https ca-certificates curl
+
 cat <<EOF | tee /etc/modules-load.d/containerd.conf
 overlay
 br_netfilter
