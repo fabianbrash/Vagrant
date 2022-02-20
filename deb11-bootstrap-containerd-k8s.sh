@@ -37,3 +37,10 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 #echo '192.168.56.31  node-1' | tee -a /etc/hosts
 #echo '192.168.56.32  node-2' | tee -a /etc/hosts
 #echo '192.168.56.21  master-1' | tee -a /etc/hosts
+
+
+## install helm 3.8.0
+
+#curl -LO https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+#tar -xzvf helm-v3.8.0-linux-amd64.tar.gz
+#sudo cp linux-amd64/helm /usr/local/bin
